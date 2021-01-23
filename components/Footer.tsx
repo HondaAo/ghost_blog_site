@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({}) =>{
             <div className={styles.footerRight}>
                 <Link href="/"><a>Top</a></Link>
                 <Link href="/"><a>Author</a></Link>
-                <Link href="/"><a>Privacy</a></Link>
+                <Link href="/"><a>Ghost</a></Link>
             </div>
         </div>
     );

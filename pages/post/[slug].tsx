@@ -1,7 +1,9 @@
 import Link  from "next/link"
 import { Post } from "../../types/types";
 import styles from '../../styles/Home.module.scss'
-import { useState } from "react";
+import React, { useState } from "react";
+import { Navbar } from "../../components/Navbar";
+import { NextSeo } from 'next-seo';
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env;
 
@@ -46,9 +48,13 @@ const _Post: React.FC<PostProps> = (props) => {
         document.body.appendChild(script)
     }
     return(
-        <div className={styles.container}>
-            <Link href="/"><a>Go Back</a></Link>
-            <h1>My Blog Post</h1>
+        <>
+       {post && <NextSeo
+          title="Pacific travel blog"
+          description={post.title}
+         />}
+        <Navbar />
+        <div className={styles.blogcontainer}>
             {post && (
             <>
             <h1>{post.title}</h1>
@@ -64,6 +70,7 @@ const _Post: React.FC<PostProps> = (props) => {
             </>
             )}
         </div>
+        </>
     )
 }
 

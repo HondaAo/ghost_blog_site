@@ -50,12 +50,6 @@
 	padding: 10px 0;
 }
 
-.goback {
-	text-align: left;
-	align-self: self-start;
-	cursor: pointer;
-}
-
 .main {
 	padding: 5rem 0;
 	flex: 1;
@@ -198,6 +192,9 @@
   width: 70%;
   padding: 3%;
 }
+.html {
+	color: gray;
+}
 
 .footer {
   display: flex;
@@ -249,6 +246,17 @@
 		width: 100%;
 		flex-direction: column;
 	}
+	.profileHeader {
+		display: block;
+	}
+	.profileLeft {
+		width: 40%;
+		height: 120px;
+		margin-left: 30%;
+	}
+	.profileRight {
+		width: 100%;
+	}
 	.container {
 		width: 100%;
 	}
@@ -267,19 +275,28 @@
 	.postlistimage {
 		width: 100%;
 		height: auto;
-	  }
-	  
+	}
+	.navlist {
+		display: none;
+	} 
+	.navbar {
+		padding: 10px 20px;
+		margin-bottom: 50px;
+	}
 	.postlisttitle {
 		width: 100%;
 		padding: 4%;
-	}
-	.navbar {
-		display: none;
 	}
 	.footerRight {
 		display: none;
 	}
 	.blogcontainer {
 		width: 100%;
+	}
+	.html {
+		display: none;
+	}
+	.header {
+		display: none;
 	}
 }

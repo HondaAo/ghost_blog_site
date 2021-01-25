@@ -1,9 +1,9 @@
-import Link  from "next/link"
 import { Post } from "../../types/types";
 import styles from '../../styles/Home.module.scss'
 import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 import { NextSeo } from 'next-seo';
+import Head from "next/head";
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env;
 
@@ -49,10 +49,18 @@ const _Post: React.FC<PostProps> = (props) => {
     }
     return(
         <>
-       {post && <NextSeo
+       {post && (
+        <>
+        <NextSeo
           title="Pacific travel blog"
           description={post.title}
-         />}
+         />
+         <Head>
+          <title>Pacific travel blog {post.title}</title>
+         </Head>
+         </>
+         )  
+         }
         <Navbar />
         <div className={styles.blogcontainer}>
             {post && (

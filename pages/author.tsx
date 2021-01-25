@@ -1,4 +1,3 @@
-import { profile } from 'console'
 import React from 'react' 
 import { Navbar } from '../components/Navbar'
 import styles from '../styles/Home.module.scss'
@@ -9,7 +8,7 @@ interface authorProps {
 }
 
 async function getAuthor() {
-    const res = await fetch(`${process.env.BLOG_URL}/ghost/api/v3/content/authors/?key=${process.env.CONTENT_API_KEY}&fields=name,profile_image,website,facebook,twitter`).then(res => res.json())
+    const res = await fetch(`${process.env.BLOG_URL}/ghost/api/v3/content/authors/?key=${process.env.CONTENT_API_KEY}&fields=name,profile_image,website,facebook,twitter,bio`).then(res => res.json())
     return res.authors[0]
 }
 
@@ -24,7 +23,6 @@ export const getStaticProps = async ({ params }) => {
 
 const AuthorPage: React.FC<authorProps> = (props: authorProps) =>{
     const { author } = props
-    console.log(author)
         return (
             <>
              <Navbar />
@@ -38,7 +36,7 @@ const AuthorPage: React.FC<authorProps> = (props: authorProps) =>{
               </div>
               <hr  style={{ color: 'lightgray'}} />
               <div className={styles.profileContent}>
-                  Under Setting
+                  {author.bio}
               </div>
              </div>
             </>

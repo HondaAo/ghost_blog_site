@@ -11,5 +11,6 @@ export type Author = {
     profile_image: string,
     website?: string,
     facebook?: string,
-    twitter?: string
+    twitter?: string,
+    bio?: string
 }

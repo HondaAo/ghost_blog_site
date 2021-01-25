@@ -12,8 +12,8 @@ export const Footer: React.FC<FooterProps> = ({}) =>{
             <div className={styles.footerLeft}>Pacific</div>
             <div className={styles.footerRight}>
                 <Link href="/"><a>Top</a></Link>
-                <Link href="/"><a>Author</a></Link>
-                <Link href="/"><a>Ghost</a></Link>
+                <Link href="/author"><a>Author</a></Link>
+                <a href="https://ghost.org/docs">Ghost</a>
             </div>
         </div>
     );
